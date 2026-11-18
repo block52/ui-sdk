@@ -1,0 +1,62 @@
+{
+  "name": "@block52/ui-sdk",
+  "version": "0.1.0",
+  "description": "Shared React UI primitives for Block52 apps",
+  "license": "CC0-1.0",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/index.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --ext .ts,.tsx src",
+    "test": "vitest run",
+    "release": "yarn build && npm publish --access public"
+  },
+  "peerDependencies": {
+    "motion": ">=11",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^10.1.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^17.4.0",
+    "jsdom": "^30.1.2",
+    "motion": "^14.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.57.2",
+    "vite": "^8.1.4",
+    "vitest": "^5.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
