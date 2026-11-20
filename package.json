@@ -16,6 +16,11 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./helpers": {
+      "types": "./dist/helpers.d.ts",
+      "import": "./dist/helpers.js",
+      "require": "./dist/helpers.cjs"
+    },
     "./styles.css": "./dist/index.css"
   },
   "files": [
