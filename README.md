@@ -1,12 +1,13 @@
 # @block52/ui-sdk
 
-Shared React UI primitives for Block52 apps. Presentational components (tooltip, dropdown,
-pagination, sliding tabs, toast, copy button, animated background) extracted from the
-[Block52 desktop app](https://github.com/block52/desktop), which is the source of truth.
+Shared React UI primitives and helpers for Block52 apps. Presentational components (tooltip,
+dropdown, pagination, sliding tabs, toast, copy button, animated background) plus the shared
+pure helpers (type guards, encoding, entropy, Sit & Go schedule), originally extracted from the
+[Block52 desktop app](https://github.com/block52/desktop) and [web UI](https://github.com/block52/ui).
 
-> **Source of truth is the desktop repo.** These components are not edited here directly —
-> they are copied in verbatim from `block52/desktop` by its `yarn sync:ui-sdk` script. Fix a
-> component in desktop, re-run the sync, then publish a new version here.
+> **This repo is the source of truth.** The desktop and web apps consume the published
+> package and keep no local copies. Fix a component or helper here, publish a new version,
+> then bump the consumers. (The original desktop `sync:ui-sdk` script is retired.)
 
 ## Install
 
@@ -23,7 +24,7 @@ import { Tooltip, Pagination, Dropdown, SlidingTabs } from "@block52/ui-sdk";
 import "@block52/ui-sdk/styles.css"; // once, at the app root
 ```
 
-## Components (v0.1.0)
+## Components
 
 - `AnimatedBackground`
 - `CopyButton`
@@ -32,6 +33,15 @@ import "@block52/ui-sdk/styles.css"; // once, at the app root
 - `SlidingTabs`
 - `ToastViewport` (+ toast context)
 - `Tooltip`
+
+## Helpers
+
+- Type guards: `hasValue`, `isNullish`, `isEmpty`, `hasElements`, `safeLength`, `isBlank`,
+  `hasContent`, `isRecord`, `isString`, `isNumber`, `isBoolean` (mirrors `pvm/ts/src/utils/guards.ts`)
+- `base64ToHex`, `generateSystemEntropy`, `generatePlayerSeedHex`
+- Sit & Go schedule: `parseSngSchedule` (https-only links), `getUpcomingSngs`, `formatCountdown`,
+  `formatUtcLabel`, `formatLocalLabel` and the timezone math behind them
+- `paginate` / `pageInfo` / `pageButtons`, `copyText`, `useCopyToClipboard`
 
 Out of scope: poker-domain components (table, wallet, modals). Those stay in the desktop app.
 
