@@ -4,7 +4,7 @@ import { defineConfig } from "tsup";
 // emitted to a single dist/index.css that consumers import once
 // (`import "@block52/ui-sdk/styles.css"`).
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: ["src/index.ts", "src/helpers.ts"],
   format: ["esm", "cjs"],
   dts: true,
   sourcemap: true,

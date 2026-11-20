@@ -1,6 +1,6 @@
 {
   "name": "@block52/ui-sdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared React UI primitives for Block52 apps",
   "license": "CC0-1.0",
   "type": "module",
@@ -15,6 +15,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./helpers": {
+      "types": "./dist/helpers.d.ts",
+      "import": "./dist/helpers.js",
+      "require": "./dist/helpers.cjs"
     },
     "./styles.css": "./dist/index.css"
   },
